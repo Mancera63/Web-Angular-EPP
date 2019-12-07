@@ -1,0 +1,33 @@
+<div class="spacer"></div>
+<div class="container content">
+    <!-- container centers content on large screens -->
+    <div class="row">
+        <!-- responsive row has 12 columns by default -->
+        <div class="col-sm-1 col-md-3">
+        </div>
+        <div class="col-sm-10 col-md-6">
+            <mat-card>
+                <mat-card-title>
+                    Iniciar Sesión
+                </mat-card-title>
+                <mat-card-content>
+                    <form #login="ngForm" (ngSubmit)="login.form.valid && onSubmit(login.form.value)">
+                        <mat-form-field>
+                            <input name="user" ngModel matInput placeholder="Usuario" required>
+                        </mat-form-field>
+                        <mat-form-field>
+                            <input name="pass" ngModel matInput placeholder="Contraseña"
+                                [type]="!hide ? 'password' : 'text'" required>
+                            <span mat-icon-button matSuffix (click)="hide = !hide">
+                                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                            </span>
+                        </mat-form-field>
+                        <button mat-raised-button class="btn btn-primary" type="submit">Entrar</button>
+                    </form>
+                </mat-card-content>
+            </mat-card>
+        </div>
+        <div class="col-sm-1 col-md-3">
+        </div>
+    </div>
+</div>

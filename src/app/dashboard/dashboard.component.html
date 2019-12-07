@@ -1,0 +1,39 @@
+<mat-toolbar class="example-header">
+    <!-- This button will toggle (open/close) the drawer -->
+    <mat-button-toggle mat-icon-button (click)="drawer.toggle()">
+        <mat-icon>menu</mat-icon>
+    </mat-button-toggle>
+    <span style="margin-left: 10px;">{{title}}</span>
+</mat-toolbar>
+
+<mat-drawer-container>
+    <mat-drawer #drawer mode="side" opened>
+        <mat-nav-list>
+            <mat-list-item routerLink="areas">
+                <mat-icon>description</mat-icon>Areas
+            </mat-list-item>
+            <mat-list-item>
+                <mat-icon>donut_small</mat-icon>Areas-Cliente
+            </mat-list-item>
+            <mat-list-item>
+                <mat-icon>account_circle</mat-icon>Clientes
+            </mat-list-item>
+            <mat-list-item>
+                <mat-icon>assignment_ind</mat-icon>Empleados
+            </mat-list-item>
+            <mat-list-item>
+                <mat-icon>shopping_cart</mat-icon>Productos
+            </mat-list-item>
+            <mat-list-item>
+                <mat-icon>assignment</mat-icon>Productos-Area-Cliente
+            </mat-list-item>
+        </mat-nav-list>
+    </mat-drawer>
+    <mat-drawer-content>
+        <div class="content">
+            <div class="col-sm-12">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </mat-drawer-content>
+</mat-drawer-container>
