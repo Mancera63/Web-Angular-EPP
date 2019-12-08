@@ -46,9 +46,6 @@ export class AreasComponent implements OnInit {
         });
 
         this.dataSource = new MatTableDataSource(this.data);
-
-        //this.dataSource = new MatTableDataSource(x);  
-        //this.dataSource.sort = this.sort;
         this.length= x.length;
       },
       error => {

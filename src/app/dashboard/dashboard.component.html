@@ -1,4 +1,4 @@
-<mat-toolbar class="example-header">
+<mat-toolbar color="primary">
     <!-- This button will toggle (open/close) the drawer -->
     <mat-button-toggle mat-icon-button (click)="drawer.toggle()">
         <mat-icon>menu</mat-icon>
@@ -9,13 +9,14 @@
 <mat-drawer-container>
     <mat-drawer #drawer mode="side" opened>
         <mat-nav-list>
-            <mat-list-item routerLink="areas">
+            <h2 matSubheader>Menu</h2>
+            <mat-list-item routerLink="./areas" routerLinkActive="active-link">
                 <mat-icon>description</mat-icon>Areas
             </mat-list-item>
-            <mat-list-item>
+            <mat-list-item routerLinkActive="active-link">
                 <mat-icon>donut_small</mat-icon>Areas-Cliente
             </mat-list-item>
-            <mat-list-item>
+            <mat-list-item routerLink="./clientes" routerLinkActive="active-link">
                 <mat-icon>account_circle</mat-icon>Clientes
             </mat-list-item>
             <mat-list-item>
@@ -26,6 +27,11 @@
             </mat-list-item>
             <mat-list-item>
                 <mat-icon>assignment</mat-icon>Productos-Area-Cliente
+            </mat-list-item>
+            <mat-divider></mat-divider>
+            <h2 matSubheader>Usuario</h2>
+            <mat-list-item>
+                <mat-icon>exit_to_app</mat-icon>Cerrar sesión
             </mat-list-item>
         </mat-nav-list>
     </mat-drawer>

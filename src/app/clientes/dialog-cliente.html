@@ -1,0 +1,25 @@
+<mat-dialog-content>
+    <form #login="ngForm" [formGroup]="form">
+            <input matInput formControlName="idCliente" name="idCliente" hidden>
+        <mat-form-field>
+            <label for="nomCliente">Nombre del cliente: </label>
+            <input matInput formControlName="nomCliente" name="nomCliente">
+        </mat-form-field>
+        <mat-form-field>
+                <label for="dirCliente">Dirección del cliente: </label>
+            <input matInput formControlName="dirCliente" name="dirCliente">
+        </mat-form-field>
+        <mat-form-field>
+                <label for="emailCliente">Email del cliente: </label>
+            <input matInput formControlName="emailCliente" name="emailCliente">
+        </mat-form-field>
+        <mat-form-field>
+                <label for="telCliente">Teléfono del cliente: </label>
+            <input matInput formControlName="telCliente" name="telCliente">
+        </mat-form-field>
+    </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button (click)="login.form.valid && saveData()" class="btn-success">Guardar</button>
+    <span mat-button class="btn btn-danger" (click)="onNoClick()">Cerrar</span>
+</mat-dialog-actions>

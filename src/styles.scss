@@ -1,11 +1,36 @@
 /* You can add global styles to this file, and also import other style files */
-@import '~@angular/material/prebuilt-themes/indigo-pink.css';
-@import '~bootstrap/dist/css/bootstrap.min.css';
-@import '~bootstrap/dist/css/bootstrap-grid.min.css';
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import "~bootstrap/dist/css/bootstrap-grid.min.css";
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-.error{
-    color: white;
-    background-color: red;
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+.success {
+  color: white;
+  background-color: green;
+}
+.error {
+  color: white;
+  background-color: red;
+}
+table {
+  width: 100%;
+}
+mat-form-field{
+  width: 100%;
+}
+mat-dialog-actions{
+  float: right;
+}
+mat-dialog-actions > .btn{
+  margin: 0 5px;
+}
+mat-dialog-content{
+  height: auto;
 }
