@@ -3,6 +3,7 @@ import { environment } from 'src/environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Cliente } from './clientes/clientes.component';
+import { Area } from './areas/areas.component';
 
 @Injectable({
   providedIn: 'root'
@@ -35,5 +36,25 @@ export class DataService {
 
   eliminarCliente(idCliente: number): Observable<any> {
     return this.httpClient.delete(this.url + '/clientes/'+idCliente);
+  }
+
+  cargarAreas(): Observable<any> {
+    return this.httpClient.get(this.url + '/areas');
+  }
+
+  actualizarArea(area: Area, idArea: number): Observable<any> {
+    var headers = new HttpHeaders();
+    headers.append('Content-Type', 'application/json');
+    return this.httpClient.put(this.url + '/areas/' + idArea, area, { headers });
+  }
+
+  insertarArea(area: Area): Observable<any> {
+    var headers = new HttpHeaders();
+    headers.append('Content-Type', 'application/json');
+    return this.httpClient.post(this.url + '/areas', area, { headers });
+  }
+
+  eliminarArea(idArea: number): Observable<any> {
+    return this.httpClient.delete(this.url + '/areas/'+idArea);
   }
 }

@@ -1,0 +1,13 @@
+<mat-dialog-content>
+        <form #login="ngForm" [formGroup]="form">
+                <input matInput formControlName="idArea" name="idArea" hidden>
+            <mat-form-field>
+                <label for="nomArea">Nombre del area: </label>
+                <input matInput formControlName="nomArea" name="nomArea">
+            </mat-form-field>
+        </form>
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+        <button mat-button (click)="login.form.valid && saveData()" class="btn-success">Guardar</button>
+        <span mat-button class="btn btn-danger" (click)="onNoClick()">Cerrar</span>
+    </mat-dialog-actions>

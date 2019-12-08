@@ -13,7 +13,7 @@ import { LoginComponent } from './login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AreasComponent } from './areas/areas.component';
+import { AreasComponent, DialogArea } from './areas/areas.component';
 import { ClientesComponent, DialogCliente } from './clientes/clientes.component';
 
 @NgModule({
@@ -23,7 +23,8 @@ import { ClientesComponent, DialogCliente } from './clientes/clientes.component'
     DashboardComponent,
     AreasComponent,
     ClientesComponent,
-    DialogCliente
+    DialogCliente,
+    DialogArea
   ],
   imports: [
     MatDialogModule,
@@ -51,7 +52,8 @@ import { ClientesComponent, DialogCliente } from './clientes/clientes.component'
   providers: [],
   bootstrap: [AppComponent],
   entryComponents: [
-    DialogCliente
+    DialogCliente,
+    DialogArea
   ]
 })
 export class AppModule { }
