@@ -19,12 +19,6 @@ export interface Cliente {
 })
 export class ClientesComponent implements OnInit {
 
-  idCliente: number;
-  nomCliente: string;
-  dirCliente: string;
-  emailCliente: string;
-  telCliente: string;
-
   constructor(private dataService: DataService, public dialog: MatDialog, public notificationService: NotificationService) { }
 
   ngOnInit() {
@@ -152,7 +146,5 @@ export class DialogCliente {
         }
       );
     }
-    //console.log(this.form.value);
   }
-
 }
