@@ -3,23 +3,23 @@
         <input matInput formControlName="idEmpleado" name="idEmpleado" hidden>
         <mat-form-field>
             <label for="nomEmpleado">Nombre: </label>
-            <input matInput formControlName="nomEmpleado" name="nomEmpleado">
+            <input matInput formControlName="nomEmpleado" name="nomEmpleado" required>
         </mat-form-field>
         <mat-form-field>
             <label for="apePatEmp">Apellido paterno: </label>
-            <input matInput formControlName="apePatEmp" name="apePatEmp">
+            <input matInput formControlName="apePatEmp" name="apePatEmp" required>
         </mat-form-field>
         <mat-form-field>
             <label for="apeMatEmp">Apellido materno: </label>
-            <input matInput formControlName="apeMatEmp" name="apeMatEmp">
+            <input matInput formControlName="apeMatEmp" name="apeMatEmp" required>
         </mat-form-field>
         <mat-form-field>
             <label for="fechaNac">Fec. de nacimiento: </label>
-            <input matInput formControlName="fechaNac" name="fechaNac" type="date">
+            <input matInput formControlName="fechaNac" name="fechaNac" type="date" required>
         </mat-form-field>
         <mat-form-field>
             <label for="emailEmp">Email: </label>
-            <input matInput formControlName="emailEmp" name="emailEmp" type="email">
+            <input matInput formControlName="emailEmp" name="emailEmp" type="email" required>
         </mat-form-field>
     </form>
 </mat-dialog-content>
