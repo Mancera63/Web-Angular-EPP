@@ -5,6 +5,7 @@ import { LoginGuardianService } from './login/login-guardian.service';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AreasComponent } from './areas/areas.component';
 import { ClientesComponent } from './clientes/clientes.component';
+import { AreasClientesComponent } from './areas-clientes/areas-clientes.component';
 
 
 const routes: Routes = [
@@ -12,16 +13,10 @@ const routes: Routes = [
   {
     path: 'dash', component: DashboardComponent, canActivate: [LoginGuardianService], children: [
       { path: 'areas', component: AreasComponent, canActivate: [LoginGuardianService] },
-      { path: 'clientes', component: ClientesComponent, canActivate: [LoginGuardianService] }
+      { path: 'clientes', component: ClientesComponent, canActivate: [LoginGuardianService] },
+      { path: 'areas-clientes', component: AreasClientesComponent, canActivate: [LoginGuardianService] }
     ]
   },
-  /*{path: 'menu', component: MenuComponent, canActivate:[LoginGuardian], children:[
-  {path: 'tabla-clientes', component: TablaClientesComponent, canActivate:[LoginGuardian]},
-  {path: 'tabla-interesados', component: TablaInteresadosComponent, canActivate:[LoginGuardian]},
-  {path: 'lista-recordatorios', component: ListaRecoComponent, canActivate:[LoginGuardian]},
-  {path: 'tabla-reportes', component: TablaReporteComponent, canActivate:[LoginGuardian]},
-  {path: 'tabla-ventas', component: TablaVentasComponent, canActivate:[LoginGuardian]},
-]},*/
   { path: '**', component: DashboardComponent, canActivate: [LoginGuardianService] }
 ];
 

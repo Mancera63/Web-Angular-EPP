@@ -1,0 +1,31 @@
+<mat-dialog-content>
+    <form #login="ngForm" [formGroup]="form">
+        <input matInput formControlName="idAreaCliente" name="idAreaCliente" hidden>
+        <mat-form-field>
+            <label for="noEmpleados">No. Empleados: </label>
+            <input matInput formControlName="noEmpleados" name="noEmpleados" type="number">
+        </mat-form-field>
+        <mat-form-field>
+            <label for="area">Area: </label>
+            <!--<input matInput formControlName="area" name="area" type="number">-->
+            <mat-select formControlName="area" name="area">
+                <mat-option *ngFor="let area of areas" [value]="area.idArea">
+                    {{area.nomArea}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+            <label for="cliente">Cliente: </label>
+            <!--<input matInput formControlName="cliente" name="cliente" type="number">-->
+            <mat-select formControlName="cliente" name="cliente">
+                <mat-option *ngFor="let cliente of clientes" [value]="cliente.idCliente">
+                    {{cliente.nomCliente}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button (click)="login.form.valid && saveData()" class="btn-success">Guardar</button>
+    <span mat-button class="btn btn-danger" (click)="onNoClick()">Cerrar</span>
+</mat-dialog-actions>

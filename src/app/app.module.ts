@@ -7,7 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
   MatProgressSpinnerModule, MatCardModule, MatFormFieldModule, MatToolbarModule, MatButtonToggleModule,
   MatInputModule, MatIconModule, MatCheckboxModule, MatButtonModule, MatSnackBarModule, MatListModule,
-  MatSidenavModule, MatTableModule, MatPaginatorModule, MatDialogModule
+  MatSidenavModule, MatTableModule, MatPaginatorModule, MatDialogModule, MatSelectModule
 } from '@angular/material';
 import { LoginComponent } from './login/login.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -15,6 +15,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AreasComponent, DialogArea } from './areas/areas.component';
 import { ClientesComponent, DialogCliente } from './clientes/clientes.component';
+import { AreasClientesComponent, DialogAreaCliente } from './areas-clientes/areas-clientes.component';
 
 @NgModule({
   declarations: [
@@ -24,9 +25,12 @@ import { ClientesComponent, DialogCliente } from './clientes/clientes.component'
     AreasComponent,
     ClientesComponent,
     DialogCliente,
-    DialogArea
+    DialogArea,
+    AreasClientesComponent,
+    DialogAreaCliente
   ],
   imports: [
+    MatSelectModule,
     MatDialogModule,
     MatPaginatorModule,
     MatTableModule,
@@ -52,6 +56,7 @@ import { ClientesComponent, DialogCliente } from './clientes/clientes.component'
   providers: [],
   bootstrap: [AppComponent],
   entryComponents: [
+    DialogAreaCliente,
     DialogCliente,
     DialogArea
   ]
