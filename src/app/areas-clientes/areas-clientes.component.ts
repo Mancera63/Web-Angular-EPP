@@ -90,9 +90,9 @@ export class AreasClientesComponent implements OnInit {
     });
   }
 
-  removeCliente(areacliente: AreaCliente): void {
+  removeAreaCliente(areacliente: AreaCliente): void {
     if (confirm("Estás seguro de eliminar el area-cliente: " + areacliente.idAreaCliente)) {
-      this.dataService.eliminarCliente(areacliente.idAreaCliente).subscribe(
+      this.dataService.eliminarAreaCliente(areacliente.idAreaCliente).subscribe(
         (result) => {
           this.notificationService.success('Area-Cliente eliminado.');
           this.data = [];
