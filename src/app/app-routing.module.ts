@@ -6,6 +6,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { AreasComponent } from './areas/areas.component';
 import { ClientesComponent } from './clientes/clientes.component';
 import { AreasClientesComponent } from './areas-clientes/areas-clientes.component';
+import { EmpleadosComponent } from './empleados/empleados.component';
 
 
 const routes: Routes = [
@@ -14,7 +15,8 @@ const routes: Routes = [
     path: 'dash', component: DashboardComponent, canActivate: [LoginGuardianService], children: [
       { path: 'areas', component: AreasComponent, canActivate: [LoginGuardianService] },
       { path: 'clientes', component: ClientesComponent, canActivate: [LoginGuardianService] },
-      { path: 'areas-clientes', component: AreasClientesComponent, canActivate: [LoginGuardianService] }
+      { path: 'areas-clientes', component: AreasClientesComponent, canActivate: [LoginGuardianService] },
+      { path: 'empleados', component: EmpleadosComponent, canActivate: [LoginGuardianService] }
     ]
   },
   { path: '**', component: DashboardComponent, canActivate: [LoginGuardianService] }

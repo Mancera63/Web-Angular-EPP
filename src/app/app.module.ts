@@ -16,6 +16,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AreasComponent, DialogArea } from './areas/areas.component';
 import { ClientesComponent, DialogCliente } from './clientes/clientes.component';
 import { AreasClientesComponent, DialogAreaCliente } from './areas-clientes/areas-clientes.component';
+import { EmpleadosComponent, DialogEmpleado } from './empleados/empleados.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,9 @@ import { AreasClientesComponent, DialogAreaCliente } from './areas-clientes/area
     DialogCliente,
     DialogArea,
     AreasClientesComponent,
-    DialogAreaCliente
+    DialogAreaCliente,
+    EmpleadosComponent,
+    DialogEmpleado
   ],
   imports: [
     MatSelectModule,
@@ -56,6 +59,7 @@ import { AreasClientesComponent, DialogAreaCliente } from './areas-clientes/area
   providers: [],
   bootstrap: [AppComponent],
   entryComponents: [
+    DialogEmpleado,
     DialogAreaCliente,
     DialogCliente,
     DialogArea

@@ -1,0 +1,29 @@
+<mat-dialog-content>
+    <form #login="ngForm" [formGroup]="form">
+        <input matInput formControlName="idEmpleado" name="idEmpleado" hidden>
+        <mat-form-field>
+            <label for="nomEmpleado">Nombre: </label>
+            <input matInput formControlName="nomEmpleado" name="nomEmpleado">
+        </mat-form-field>
+        <mat-form-field>
+            <label for="apePatEmp">Apellido paterno: </label>
+            <input matInput formControlName="apePatEmp" name="apePatEmp">
+        </mat-form-field>
+        <mat-form-field>
+            <label for="apeMatEmp">Apellido materno: </label>
+            <input matInput formControlName="apeMatEmp" name="apeMatEmp">
+        </mat-form-field>
+        <mat-form-field>
+            <label for="fechaNac">Fec. de nacimiento: </label>
+            <input matInput formControlName="fechaNac" name="fechaNac" type="date">
+        </mat-form-field>
+        <mat-form-field>
+            <label for="emailEmp">Email: </label>
+            <input matInput formControlName="emailEmp" name="emailEmp" type="email">
+        </mat-form-field>
+    </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button (click)="login.form.valid && saveData()" class="btn-success">Guardar</button>
+    <span mat-button class="btn btn-danger" (click)="onNoClick()">Cerrar</span>
+</mat-dialog-actions>
