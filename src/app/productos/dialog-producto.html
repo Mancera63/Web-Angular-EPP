@@ -1,0 +1,44 @@
+<mat-dialog-content>
+    <form #login="ngForm" [formGroup]="form">
+        <input matInput formControlName="idProducto" name="idProducto" hidden>
+        <mat-form-field>
+            <label for="nomProducto">Nombre: </label>
+            <input matInput formControlName="nomProducto" name="nomProducto" required>
+        </mat-form-field>
+        <mat-form-field>
+            <label for="costo">Costo: </label>
+            <input matInput formControlName="costo" name="costo" type="number" required>
+        </mat-form-field>
+        <mat-form-field>
+            <label for="precio">Precio: </label>
+            <input matInput formControlName="precio" name="precio" type="number" required>
+        </mat-form-field>
+        <mat-form-field>
+            <label for="existencia">Existencia: </label>
+            <input matInput formControlName="existencia" name="existencia" type="number" required>
+        </mat-form-field>
+        <mat-form-field>
+            <label for="reorden">Reorden: </label>
+            <input matInput formControlName="reorden" name="reorden" type="number" required>
+        </mat-form-field>
+        <mat-form-field>
+            <label for="comprometidas">Comprometidas: </label>
+            <input matInput formControlName="comprometidas" name="comprometidas" type="number" required>
+        </mat-form-field>
+        <mat-form-field>
+            <label for="vigente">Vigente: </label>
+            <mat-select formControlName="vigente" name="vigente">
+                <mat-option  value="0">No</mat-option>
+                <mat-option  value="1">Sí</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+            <label for="imagen">Url imagen: </label>
+            <input matInput formControlName="imagen" name="imagen" required>
+        </mat-form-field>
+    </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button (click)="login.form.valid && saveData()" class="btn-success">Guardar</button>
+    <span mat-button class="btn btn-danger" (click)="onNoClick()">Cerrar</span>
+</mat-dialog-actions>

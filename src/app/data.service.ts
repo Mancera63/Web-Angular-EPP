@@ -6,6 +6,7 @@ import { Cliente } from './clientes/clientes.component';
 import { Area } from './areas/areas.component';
 import { AreaCliente } from './areas-clientes/areas-clientes.component';
 import { Empleado } from './empleados/empleados.component';
+import { Producto } from './productos/productos.component';
 
 @Injectable({
   providedIn: 'root'
@@ -96,14 +97,12 @@ export class DataService {
   }
 
   actualizarEmpleado(empleado: Empleado, idEmpleado: number): Observable<any> {
-    //console.log(cliente);
     var headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
     return this.httpClient.put(this.url + '/empleados/' + idEmpleado, empleado, { headers });
   }
 
   insertarEmpleado(empleado: Empleado): Observable<any> {
-    //console.log(cliente);
     var headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
     return this.httpClient.post(this.url + '/empleados', empleado, { headers });
@@ -111,5 +110,29 @@ export class DataService {
 
   eliminarEmpleado(idEmpleado: number): Observable<any> {
     return this.httpClient.delete(this.url + '/empleados/'+idEmpleado);
+  }
+
+  cargarProductos(): Observable<any> {
+    return this.httpClient.get(this.url + '/productos');
+  }
+
+  cargarProducto(idProducto: number): Observable<any> {
+    return this.httpClient.get(this.url + '/productos/'+idProducto);
+  }
+
+  actualizarProducto(producto: Producto, idProducto: number): Observable<any> {
+    var headers = new HttpHeaders();
+    headers.append('Content-Type', 'application/json');
+    return this.httpClient.put(this.url + '/productos/' + idProducto, producto, { headers });
+  }
+
+  insertarProducto(producto: Producto): Observable<any> {
+    var headers = new HttpHeaders();
+    headers.append('Content-Type', 'application/json');
+    return this.httpClient.post(this.url + '/productos', producto, { headers });
+  }
+
+  eliminarProducto(idProducto: number): Observable<any> {
+    return this.httpClient.delete(this.url + '/productos/'+idProducto);
   }
 }

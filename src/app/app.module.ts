@@ -17,6 +17,7 @@ import { AreasComponent, DialogArea } from './areas/areas.component';
 import { ClientesComponent, DialogCliente } from './clientes/clientes.component';
 import { AreasClientesComponent, DialogAreaCliente } from './areas-clientes/areas-clientes.component';
 import { EmpleadosComponent, DialogEmpleado } from './empleados/empleados.component';
+import { ProductosComponent, DialogProducto } from './productos/productos.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,9 @@ import { EmpleadosComponent, DialogEmpleado } from './empleados/empleados.compon
     AreasClientesComponent,
     DialogAreaCliente,
     EmpleadosComponent,
-    DialogEmpleado
+    DialogEmpleado,
+    ProductosComponent,
+    DialogProducto
   ],
   imports: [
     MatSelectModule,
@@ -59,6 +62,7 @@ import { EmpleadosComponent, DialogEmpleado } from './empleados/empleados.compon
   providers: [],
   bootstrap: [AppComponent],
   entryComponents: [
+    DialogProducto,
     DialogEmpleado,
     DialogAreaCliente,
     DialogCliente,
